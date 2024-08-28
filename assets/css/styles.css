@@ -8,7 +8,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f4f4f4;
@@ -147,4 +147,63 @@ footer {
     color: var(--royal-blue);
     border-top: 2px solid var(--ash);
     padding-top: 20px;
+}
+
+.program-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-code-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pdf-viewer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: var(--royal-blue);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: var(--sea-blue);
+}
+
+.pdf-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.pdf-viewer iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .program-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .qr-code-wrapper {
+        width: 30%;
+        margin-bottom: 0;
+    }
 }

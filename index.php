@@ -61,9 +61,17 @@ sort($photos);
         </section>
 
         <section id="qr-code">
-            <h2>Download Our Program</h2>
-            <img with="100%" src="<?php echo $qr_code_url; ?>" alt="QR Code for Wedding Program">
-            <p>Scan this QR code to download our wedding program</p>
+            <h2>Our Wedding Program</h2>
+            <div class="program-container">
+                <div class="pdf-viewer">
+                    <a href="assets/program.pdf" download class="download-button">Download Wedding Program</a>
+                    <iframe src="https://docs.google.com/viewer?url=<?php echo urlencode('https://wedding.emmallextech.com/assets/program.pdf'); ?>&embedded=true" 
+                        width="100%" 
+                        height="600" 
+                        style="border: none;">
+                    </iframe>
+                </div>
+            </div>
         </section>
 
     </main>

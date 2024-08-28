@@ -4,11 +4,11 @@ $venue = "Beautiful Wedding Venue";
 $time = "1:30 PM";
 $address = "Most Rev. Kwesi Dickson Memorial Methodist Chapel, Adjiringanor";
 $google_maps_link = "https://maps.app.goo.gl/HjZGqbGNi8ZNHLZh7";
-$qr_code_url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" . urlencode("https://wedding.emmallextech.com/pdf");
+$qr_code_url = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" . urlencode("https://wedding.emmallextech.com/assets/program.pdf");
 
 // Get all image files from the photoshoot directory
 $photoshoot_dir = "assets/images/photoshoot";
-$photos = glob($photoshoot_dir . "/*.{jpg,jpeg,png,gif}", GLOB_BRACE);
+$photos = glob($photoshoot_dir . "/*.{jpg,jpeg,png,gif,JPG}", GLOB_BRACE);
 
 // Sort the files alphabetically
 sort($photos);
@@ -52,7 +52,7 @@ sort($photos);
             <div class="slideshow-container">
                 <?php foreach ($photos as $index => $photo): ?>
                     <div class="slide fade">
-                        <img src="<?php echo $photo; ?>" alt="Pre-wedding photo <?php echo $index + 1; ?>">
+                        <img src="<?php echo $photo; ?>" width="100%" alt="Pre-wedding photo <?php echo $index + 1; ?>">
                     </div>
                 <?php endforeach; ?>
                 <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
@@ -62,7 +62,7 @@ sort($photos);
 
         <section id="qr-code">
             <h2>Download Our Program</h2>
-            <img src="<?php echo $qr_code_url; ?>" alt="QR Code for Wedding Program">
+            <img with="100%" src="<?php echo $qr_code_url; ?>" alt="QR Code for Wedding Program">
             <p>Scan this QR code to download our wedding program</p>
         </section>
 

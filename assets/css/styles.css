@@ -60,6 +60,7 @@ section {
 
 #qr-code {
     border-top-color: var(--sea-blue);
+    text-align: center;
 }
 
 #location {
@@ -93,13 +94,13 @@ h2 {
 .slideshow-container {
     position: relative;
     max-width: 100%;
-    max-height: 650px;
+    max-height: 500px;
     overflow: hidden;
 }
 
 .slide {
     display: none;
-    height: 650px;
+    height: 500px;
 }
 
 .slide img {

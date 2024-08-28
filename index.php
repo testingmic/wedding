@@ -24,7 +24,7 @@ sort($photos);
 </head>
 <body>
     <header hidden>
-        <h1>Our Wedding</h1>
+        <h1 style="text-align: center;">Our Wedding</h1>
         <p class="date"><?php echo $wedding_date; ?></p>
     </header>
 
@@ -35,20 +35,10 @@ sort($photos);
             <p><strong>Time:</strong> <?php echo $time; ?></p>
             <p><strong>Date:</strong> <?php echo $wedding_date; ?></p>
             <p><strong>Venue:</strong> <?php echo $address; ?></p>
-            <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.4718986073362!2d-0.13038682501418508!3d5.644650294336619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf849e371a4c6b%3A0xc39e46b96c80314a!2sMost%20Rev.%20Kwesi%20Dickson%20Memorial%20Methodist%20Chapel%2C%20Adjiringanor!5e0!3m2!1sen!2sgh!4v1724840292577!5m2!1sen!2sgh" 
-                width="600" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            </div>
         </section>
+
         <section id="slideshow">
-            <h2>Our Pre-Wedding Photos</h2>
+            <h2 style="text-align: center;">Our Pre-Wedding Photos</h2>
             <div class="slideshow-container">
                 <?php foreach ($photos as $index => $photo): ?>
                     <div class="slide fade">
@@ -61,7 +51,7 @@ sort($photos);
         </section>
 
         <section id="qr-code">
-            <h2>Our Wedding Program</h2>
+            <h2 style="text-align: center;">Our Wedding Program</h2>
             <div class="program-container">
                 <div class="pdf-viewer">
                     <a href="assets/program.pdf" download class="download-button">Download Wedding Program</a>
@@ -73,6 +63,22 @@ sort($photos);
                 </div>
             </div>
         </section>
+
+        <section id="location">
+            <h2 style="text-align: center;">Google Maps Location</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.4718986073362!2d-0.13038682501418508!3d5.644650294336619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf849e371a4c6b%3A0xc39e46b96c80314a!2sMost%20Rev.%20Kwesi%20Dickson%20Memorial%20Methodist%20Chapel%2C%20Adjiringanor!5e0!3m2!1sen!2sgh!4v1724840292577!5m2!1sen!2sgh" 
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
 
     </main>
 

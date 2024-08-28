@@ -23,7 +23,7 @@ sort($photos);
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header>
+    <header hidden>
         <h1>Our Wedding</h1>
         <p class="date"><?php echo $wedding_date; ?></p>
     </header>
@@ -33,8 +33,8 @@ sort($photos);
             <img src="assets/images/logo.jpeg" width="100%" alt="Wedding Location">
             <h2></h2>
             <p><strong>Time:</strong> <?php echo $time; ?></p>
-            <p><strong>Venue:</strong> <?php echo $venue; ?></p>
-            <p><strong>Address:</strong> <?php echo $address; ?></p>
+            <p><strong>Date:</strong> <?php echo $wedding_date; ?></p>
+            <p><strong>Venue:</strong> <?php echo $address; ?></p>
             <div class="map-container">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.4718986073362!2d-0.13038682501418508!3d5.644650294336619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf849e371a4c6b%3A0xc39e46b96c80314a!2sMost%20Rev.%20Kwesi%20Dickson%20Memorial%20Methodist%20Chapel%2C%20Adjiringanor!5e0!3m2!1sen!2sgh!4v1724840292577!5m2!1sen!2sgh" 
@@ -72,6 +72,6 @@ sort($photos);
         <p>&copy; <?php echo date("Y"); ?> - Emmanuel & Emmanuella</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

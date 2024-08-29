@@ -89,6 +89,9 @@ sort($program_photos);
         <!-- Program Slideshow -->
         <section id="program-slideshow">
             <h2 class="center">Our Wedding Program</h2>
+            <div class="center">
+                <a href="assets/program.pdf" download class="download-button">Download Wedding Program</a>
+            </div>
             <div class="slideshow-container program-slideshow">
                 <?php foreach ($program_photos as $index => $page): ?>
                     <div class="slide fade">

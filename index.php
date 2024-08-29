@@ -21,6 +21,26 @@ sort($photos);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Wedding - <?php echo $wedding_date; ?></title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- heatmap.com snippet -->
+    <script>
+    (function() {      
+        var _heatmap_paq = window._heatmap_paq || [];
+        var heatUrl = window.heatUrl = "https://dashboard.heatmap.com/";
+        function heatLoader(url, item) {
+        if(typeof handleSinglePagedWebsite !== 'undefined' && item == 'prep') return true;
+        var s = document.createElement("script"); s.type = "text/javascript"; 
+        s.src = url; s.async = false; s.defer = true; document.head.appendChild(s);
+        }
+        heatLoader(heatUrl+"preprocessor.min.js?sid=2705", "prep");
+        setTimeout(function() {
+        if(typeof _heatmap_paq !== "object" || _heatmap_paq.length == 0) {     
+            _heatmap_paq.push(["setTrackerUrl", heatUrl+"heatmap.php"]);
+            heatLoader(heatUrl+"heatmap-light.min.js?sid=2705", "heat");
+        }
+        }, 1000);
+    })();
+    </script>
+    <!-- End heatmap.com snippet Code -->
 </head>
 <body>
     <header hidden>

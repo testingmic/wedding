@@ -94,13 +94,13 @@ h2 {
 .slideshow-container {
     position: relative;
     max-width: 100%;
-    max-height: 500px;
+    max-height: 550px;
     overflow: hidden;
 }
 
 .slide {
     display: none;
-    height: 500px;
+    height: 550px;
 }
 
 .slide img {
@@ -123,7 +123,7 @@ h2 {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
-    background-color: rgba(65, 105, 225, 0.8); /* Royal blue with opacity */
+    background-color: rgba(0,0,0,0.8);
 }
 
 .next {
@@ -132,7 +132,7 @@ h2 {
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(65, 105, 225, 1); /* Solid royal blue on hover */
+    background-color: rgba(0,0,0,0.9);
 }
 
 #qr-code img {
@@ -206,4 +206,17 @@ footer {
         width: 30%;
         margin-bottom: 0;
     }
+}
+
+.center {
+    text-align: center;
+}
+
+/* You can add specific styles for each slideshow if needed */
+.prewedding-slideshow {
+    /* Specific styles for pre-wedding slideshow */
+}
+
+.program-slideshow {
+    /* Specific styles for program slideshow */
 }

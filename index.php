@@ -1,4 +1,16 @@
 <?php
+#display errors
+error_reporting(E_ALL);
+
+if($_SERVER['HTTP_HOST'] == "localhost") {
+	// display the errors
+	ini_set("display_errors", 1);
+}
+
+#set new places for my error recordings
+ini_set("log_errors","1");
+ini_set("error_log", "errors_log");
+
 $wedding_date = "September 7, 2024";
 $venue = "Beautiful Wedding Venue";
 $time = "1:30 PM";
@@ -7,11 +19,14 @@ $google_maps_link = "https://maps.app.goo.gl/HjZGqbGNi8ZNHLZh7";
 $qr_code_url = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" . urlencode("https://wedding.emmallextech.com/assets/program.pdf");
 
 // Get all image files from the photoshoot directory
-$photoshoot_dir = "assets/images/photoshoot";
-$photos = glob($photoshoot_dir . "/*.{jpg,jpeg,png,gif,JPG}", GLOB_BRACE);
+$photos = glob("assets/images/photoshoot" . "/*.{jpg,jpeg,png,gif,JPG}", GLOB_BRACE);
+
+// Get all image files from the program directory
+$program_photos = glob("assets/images/program" . "/*.{jpg,jpeg,png,gif,JPG}", GLOB_BRACE);  
 
 // Sort the files alphabetically
 sort($photos);
+sort($program_photos);
 ?>
 
 <!DOCTYPE html>
@@ -57,35 +72,36 @@ sort($photos);
             <p><strong>Venue:</strong> <?php echo $address; ?></p>
         </section>
 
+        <!-- Pre-wedding Photos Slideshow -->
         <section id="slideshow">
-            <h2 style="text-align: center;">Our Pre-Wedding Photos</h2>
-            <div class="slideshow-container">
+            <h2 class="center">Our Pre-Wedding Photos</h2>
+            <div class="slideshow-container prewedding-slideshow">
                 <?php foreach ($photos as $index => $photo): ?>
                     <div class="slide fade">
-                        <img src="<?php echo $photo; ?>" width="100%" alt="Pre-wedding photo <?php echo $index + 1; ?>">
+                        <img src="<?php echo $photo; ?>" alt="Pre-wedding photo <?php echo $index + 1; ?>">
                     </div>
                 <?php endforeach; ?>
-                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                <a class="prev" onclick="changeSlide(-1, this.closest('.slideshow-container'))">&#10094;</a>
+                <a class="next" onclick="changeSlide(1, this.closest('.slideshow-container'))">&#10095;</a>
             </div>
         </section>
 
-        <section id="qr-code">
-            <h2 style="text-align: center;">Our Wedding Program</h2>
-            <div class="program-container">
-                <div class="pdf-viewer">
-                    <a href="assets/program.pdf" download class="download-button">Download Wedding Program</a>
-                    <iframe src="https://docs.google.com/viewer?url=<?php echo urlencode('https://wedding.emmallextech.com/assets/program.pdf'); ?>&embedded=true" 
-                        width="100%" 
-                        height="600" 
-                        style="border: none;">
-                    </iframe>
-                </div>
+        <!-- Program Slideshow -->
+        <section id="program-slideshow">
+            <h2 class="center">Our Wedding Program</h2>
+            <div class="slideshow-container program-slideshow">
+                <?php foreach ($program_photos as $index => $page): ?>
+                    <div class="slide fade">
+                        <img height="100%" width="100%" src="<?php echo $page; ?>" alt="Program page <?php echo $index + 1; ?>">
+                    </div>
+                <?php endforeach; ?>
+                <a class="prev" onclick="changeSlide(-1, this.closest('.slideshow-container'))">&#10094;</a>
+                <a class="next" onclick="changeSlide(1, this.closest('.slideshow-container'))">&#10095;</a>
             </div>
         </section>
 
         <section id="location">
-            <h2 style="text-align: center;">Google Maps Location</h2>
+            <h2 class="center">Google Maps Location</h2>
             <div class="map-container">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.4718986073362!2d-0.13038682501418508!3d5.644650294336619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf849e371a4c6b%3A0xc39e46b96c80314a!2sMost%20Rev.%20Kwesi%20Dickson%20Memorial%20Methodist%20Chapel%2C%20Adjiringanor!5e0!3m2!1sen!2sgh!4v1724840292577!5m2!1sen!2sgh" 

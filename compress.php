@@ -50,10 +50,10 @@ function compressImage($source, $destination, $quality, $maxWidth, $maxHeight) {
     return true;
 }
 
-$directory = 'assets/images/photoshoot/';
-$quality = 80; // 0 to 100
-$maxWidth = 1920;
-$maxHeight = 1080;
+$directory = 'assets/images/program/';
+$quality = 90; // 0 to 100
+$maxWidth = 1024;
+$maxHeight = 840;
 
 foreach (new DirectoryIterator($directory) as $fileInfo) {
     if ($fileInfo->isDot()) continue;
@@ -61,7 +61,7 @@ foreach (new DirectoryIterator($directory) as $fileInfo) {
     $extension = strtolower($fileInfo->getExtension());
     if (in_array($extension, ['jpg', 'jpeg', 'png'])) {
         $filePath = $fileInfo->getPathname();
-        $newFilePath = $directory . 'compressed_' . $fileInfo->getFilename();
+        $newFilePath = $directory . $fileInfo->getFilename();
         
         if (compressImage($filePath, $newFilePath, $quality, $maxWidth, $maxHeight)) {
             echo "Compressed: " . $fileInfo->getFilename() . "\n";

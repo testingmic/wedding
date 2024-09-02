@@ -11,12 +11,16 @@ if($_SERVER['HTTP_HOST'] == "localhost") {
 ini_set("log_errors","1");
 ini_set("error_log", "errors_log");
 
+// set the wedding program
+$program_pdf = "assets/EmmanuelAndEmmanuella.pdf";
+
+// set other params
 $wedding_date = "September 7, 2024";
 $venue = "Beautiful Wedding Venue";
 $time = "1:30 PM";
 $address = "Most Rev. Kwesi Dickson Memorial Methodist Chapel, Adjiringanor";
 $google_maps_link = "https://maps.app.goo.gl/HjZGqbGNi8ZNHLZh7";
-$qr_code_url = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" . urlencode("https://wedding.emmallextech.com/assets/program.pdf");
+$qr_code_url = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" . urlencode("https://wedding.emmallextech.com/{$program_pdf}");
 
 // Get all image files from the photoshoot directory
 $photos = glob("assets/images/photoshoot" . "/*.{jpg,jpeg,png,gif,JPG}", GLOB_BRACE);
@@ -90,7 +94,7 @@ sort($program_photos);
         <section id="program-slideshow">
             <h2 class="center">Our Wedding Program</h2>
             <div class="center">
-                <a href="assets/program.pdf" download class="download-button">Download Wedding Program</a>
+                <a href="<?= $program_pdf ?>" download class="download-button">Download Wedding Program</a>
             </div>
             <div class="slideshow-container program-slideshow">
                 <?php foreach ($program_photos as $index => $page): ?>

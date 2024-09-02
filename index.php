@@ -12,7 +12,7 @@ ini_set("log_errors","1");
 ini_set("error_log", "errors_log");
 
 // set the wedding program
-$program_pdf = "assets/EmmanuelAndEmmanuella.pdf";
+$program_pdf = "assets/program.pdf";
 
 // set other params
 $wedding_date = "September 7, 2024";
